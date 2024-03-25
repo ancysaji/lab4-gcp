@@ -1,6 +1,6 @@
 provider "google" {
-  credentials = file("deep-theorem-418302-a2f3d31c22d1.json")
-  project     = "deep-theorem-418302"
+  credentials = file("keyfile.json")
+  project     = "proj-id"
   region      = "us-central1"
   zone        = "us-central1-a"
 }
@@ -48,7 +48,7 @@ resource "google_compute_instance" "flask_app" {
 spec:
   containers:
     - name: flask-app
-      image: gcr.io/deep-theorem-418302/sajiapp:latest
+      image: gcr.io/proj-id/sajiapp:latest
       ports:
         - containerPort: 5000
   restartPolicy: Always
