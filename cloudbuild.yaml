@@ -1,12 +1,12 @@
 steps:
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/deep-theorem-418302/flask-backend:latest', '.']
+    args: ['build', '-t', 'gcr.io/proj-id/flask-backend:latest', '.']
   # Push the Docker image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/deep-theorem-418302/flask-backend:latest']
+    args: ['push', 'gcr.io/project-id/flask-backend:latest']
   # Deploy using Terraform (optional, requires Terraform setup in Cloud Build)
   # - name: 'gcr.io/$PROJECT_ID/terraform'
   #   args: ['apply', '-auto-approve']
 images:
-  - 'gcr.io/deep-theorem-418302/flask-backend:latest'
+  - 'gcr.io/prj - id/flask-backend:latest'
